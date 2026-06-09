@@ -5,6 +5,8 @@ import Service from "./pages/Service";
 import Hymns from "./pages/Hymns";
 import Prayers from "./pages/Prayers";
 import Ministers from "./pages/Ministers";
+import Welcome from "./pages/Welcome";
+import Committee from "./pages/Committee";
 
 import BottomNav from "./components/BottomNav";
 
@@ -17,6 +19,8 @@ function App() {
         <Route path="/hymns" element={<Hymns />} />
         <Route path="/prayers" element={<Prayers />} />
         <Route path="/ministers" element={<Ministers />} />
+        <Route path="/welcome" element={<Welcome />} />
+        <Route path="/committee" element={<Committee />} />
       </Routes>
 
       <BottomNav />
