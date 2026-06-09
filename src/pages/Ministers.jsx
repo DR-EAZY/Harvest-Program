@@ -3,7 +3,7 @@ const ministers = [
     id: 1,
     name: "Most Snr. Evangelist A. O. Adebayo",
     role: "Conference Chairman",
-    church: "CAC Nigeria & Overseas",
+    church: "C&S MOVT CHURCH YOUTH MINISTRY",
     message:
       "Leading the annual harvest thanksgiving and revival service."
   },
@@ -12,7 +12,7 @@ const ministers = [
     id: 2,
     name: "Pastor Mrs. Deborah Johnson",
     role: "Guest Speaker",
-    church: "CAC Miracle Center",
+    church: "C&S MOVT CHURCH YOUTH MINISTRY",
     message:
       "Ministering on the theme: Overflowing Grace."
   },
@@ -21,7 +21,7 @@ const ministers = [
     id: 3,
     name: "Evangelist Samuel Adeyemi",
     role: "Revival Minister",
-    church: "CAC Oke-Igbala",
+    church: "C&S MOVT CHURCH YOUTH MINISTRY",
     message:
       "Special ministration on healing and restoration."
   },
@@ -30,7 +30,7 @@ const ministers = [
     id: 4,
     name: "Choir Director Esther Afolabi",
     role: "Music Minister",
-    church: "CAC Harvest Voices",
+    church: "C&S MOVT CHURCH YOUTH MINISTRY",
     message:
       "Leading praise, worship, and thanksgiving hymns."
   }
