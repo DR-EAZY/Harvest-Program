@@ -9,7 +9,7 @@ export default function Home() {
         className="relative rounded-b-[40px] overflow-hidden"
         style={{
           backgroundImage: "url('/assets/flyer.jpeg')",
-          backgroundSize: "contain",
+          backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
