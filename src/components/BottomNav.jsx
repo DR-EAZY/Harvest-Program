@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   FaHome,
   FaBookOpen,
@@ -8,27 +8,122 @@ import {
 } from "react-icons/fa";
 
 export default function BottomNav() {
+  const location = useLocation();
+
+  const navItems = [
+    {
+      name: "Home",
+      path: "/",
+      icon: <FaHome />,
+    },
+    {
+      name: "Service",
+      path: "/service",
+      icon: <FaBookOpen />,
+    },
+    {
+      name: "Hymns",
+      path: "/hymns",
+      icon: <FaMusic />,
+    },
+    {
+      name: "Prayers",
+      path: "/prayers",
+      icon: <FaPray />,
+    },
+    {
+      name: "Ministers",
+      path: "/ministers",
+      icon: <FaUsers />,
+    },
+  ];
+
   return (
-    <div className="fixed bottom-0 left-0 w-full bg-green-900 text-white flex justify-around py-3 shadow-lg">
-      <Link to="/">
-        <FaHome size={20} />
-      </Link>
+    <div
+      className="
+        fixed
+        bottom-4
+        left-4
+        right-4
+        z-50
+      "
+    >
+      <div
+        className="
+          bg-white
+          rounded-3xl
+          shadow-2xl
+          border
+          border-slate-200
+          px-2
+          py-2
+        "
+      >
+        <div className="flex justify-around">
 
-      <Link to="/service">
-        <FaBookOpen size={20} />
-      </Link>
+          {navItems.map((item) => {
+            const active = location.pathname === item.path;
 
-      <Link to="/hymns">
-        <FaMusic size={20} />
-      </Link>
+            return (
+              <Link
+                key={item.name}
+                to={item.path}
+                className="
+                  flex
+                  flex-col
+                  items-center
+                  justify-center
+                  px-3
+                  py-2
+                  rounded-2xl
+                  transition-all
+                "
+              >
+                <div
+                  className={`
+                    text-xl
+                    ${
+                      active
+                        ? "text-orange-500"
+                        : "text-green-800"
+                    }
+                  `}
+                >
+                  {item.icon}
+                </div>
 
-      <Link to="/prayers">
-        <FaPray size={20} />
-      </Link>
+                <span
+                  className={`
+                    text-xs
+                    mt-1
+                    font-medium
+                    ${
+                      active
+                        ? "text-orange-500"
+                        : "text-gray-600"
+                    }
+                  `}
+                >
+                  {item.name}
+                </span>
 
-      <Link to="/ministers">
-        <FaUsers size={20} />
-      </Link>
+                {active && (
+                  <div
+                    className="
+                      mt-1
+                      w-6
+                      h-1
+                      bg-orange-500
+                      rounded-full
+                    "
+                  />
+                )}
+              </Link>
+            );
+          })}
+
+        </div>
+      </div>
     </div>
   );
 }

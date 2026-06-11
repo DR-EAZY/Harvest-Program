@@ -7,6 +7,9 @@ import Prayers from "./pages/Prayers";
 import Ministers from "./pages/Ministers";
 import Welcome from "./pages/Welcome";
 import Committee from "./pages/Committee";
+import Gallery from "./pages/Gallery";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 import BottomNav from "./components/BottomNav";
 
@@ -21,6 +24,9 @@ function App() {
         <Route path="/ministers" element={<Ministers />} />
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/committee" element={<Committee />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
 
       <BottomNav />

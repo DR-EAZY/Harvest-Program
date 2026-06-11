@@ -1,249 +1,319 @@
-import SectionCard from "../components/SectionCard";
+import { Link } from "react-router-dom";
 import {
   FaChurch,
   FaPray,
-  FaCalendarAlt,
-  FaMapMarkerAlt,
+  FaArrowRight,
 } from "react-icons/fa";
 
 export default function Home() {
-  return (
-    <div className="min-h-screen bg-slate-100 pb-24">
+  const menuItems = [
+    { title: "Service", icon: "📖", link: "/service" },
+    { title: "Hymns", icon: "🎵", link: "/hymns" },
+    { title: "Prayers", icon: "🙏", link: "/prayers" },
+    { title: "Ministers", icon: "👥", link: "/ministers" },
+    { title: "Welcome", icon: "📜", link: "/welcome" },
+    { title: "Committee", icon: "🏆", link: "/committee" },
+    { title: "Gallery", icon: "📸", link: "/gallery" },
+    { title: "About", icon: "⛪", link: "/about" },
+    { title: "Contact", icon: "📞", link: "/contact" },
+  ];
 
-      {/* HERO SECTION */}
+  return (
+    <div className="min-h-screen bg-slate-50 pb-24">
+
+      {/* HERO */}
       <section
-        className="relative min-h-[75vh] bg-cover bg-center"
+        className="relative min-h-[80vh] bg-cover bg-center"
         style={{
           backgroundImage: "url('/assets/flyer.jpeg')",
         }}
       >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-green-950/90 via-green-900/80 to-orange-900/80"></div>
 
-        <div className="relative z-10 px-6 pt-10 pb-16">
+        <div className="relative z-10 px-6 py-12 text-center">
 
-          {/* Logo */}
           <div className="flex justify-center">
-            <div className="bg-white p-2 rounded-full shadow-2xl">
-              <img
-                src="/assets/logo.jpg"
-                alt="Church Logo"
-                className="w-28 h-28 rounded-full object-cover"
-              />
-            </div>
+            <img
+              src="/assets/logo.jpg"
+              alt="Church Logo"
+              className="
+                w-32 h-32
+                rounded-full
+                border-4 border-orange-400
+                shadow-2xl
+                object-cover
+              "
+            />
           </div>
 
-          {/* Title */}
-          <div className="text-center mt-6 text-white">
-            <h1 className="text-4xl font-extrabold">
-              HARVEST THANKSGIVING
-            </h1>
+          <h1 className="text-white text-5xl font-black mt-8">
+            HARVEST
+          </h1>
 
-            <p className="mt-3 text-lg">
-              Cherubim & Seraphim Movement Church
-            </p>
+          <h2 className="text-orange-400 text-4xl font-black">
+            THANKSGIVING
+          </h2>
 
-            <div className="inline-block mt-4 px-5 py-2 rounded-full bg-yellow-400 text-black font-bold shadow-lg">
+          <p className="text-white mt-4 text-lg">
+            Cherubim & Seraphim Movement Church
+          </p>
+
+          <div className="mt-6">
+            <span
+              className="
+                bg-orange-500
+                text-white
+                px-6
+                py-3
+                rounded-full
+                font-bold
+                shadow-lg
+              "
+            >
               Harvest of Divine Increase
-            </div>
+            </span>
           </div>
 
-          {/* Event Information */}
-          <div className="grid grid-cols-2 gap-4 mt-10">
+          <div className="mt-10 flex justify-center gap-3">
+            <Link
+              to="/service"
+              className="
+                bg-white
+                text-green-900
+                px-5
+                py-3
+                rounded-full
+                font-bold
+                shadow-lg
+              "
+            >
+              Order of Service
+            </Link>
 
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 text-white">
-              <FaCalendarAlt className="text-2xl mb-2" />
-              <p className="text-sm">Date</p>
-              <h3 className="font-bold">
-                November 2026
-              </h3>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 text-white">
-              <FaMapMarkerAlt className="text-2xl mb-2" />
-              <p className="text-sm">Venue</p>
-              <h3 className="font-bold">
-                Church Auditorium
-              </h3>
-            </div>
-
+            <Link
+              to="/hymns"
+              className="
+                bg-orange-500
+                text-white
+                px-5
+                py-3
+                rounded-full
+                font-bold
+                shadow-lg
+              "
+            >
+              Hymns
+            </Link>
           </div>
 
         </div>
       </section>
 
-      {/* WELCOME MESSAGE */}
+      {/* THEME CARD */}
       <div className="px-5 -mt-10 relative z-20">
-        <div className="bg-white rounded-3xl shadow-xl p-6">
 
-          <div className="flex items-center gap-3 mb-4">
-            <FaChurch className="text-green-800 text-2xl" />
-            <h2 className="text-xl font-bold text-green-900">
-              Welcome Message
-            </h2>
-          </div>
-
-          <p className="leading-7 text-gray-700">
-            Welcome to our Annual Harvest Thanksgiving Service.
-            We gather together in gratitude to God Almighty for His
-            faithfulness, protection, provision, mercy and abundant
-            blessings throughout the year.
+        <div
+          className="
+            bg-gradient-to-r
+            from-orange-500
+            to-green-700
+            text-white
+            rounded-3xl
+            p-6
+            shadow-xl
+            text-center
+          "
+        >
+          <p className="uppercase tracking-widest text-sm">
+            Harvest Theme
           </p>
 
-        </div>
-      </div>
-
-      {/* HARVEST THEME */}
-      <div className="px-5 mt-5">
-
-        <div className="bg-gradient-to-r from-yellow-100 to-yellow-50 border-l-4 border-yellow-500 rounded-3xl p-5 shadow-sm">
-
-          <h2 className="text-xl font-bold text-green-900">
-            Harvest Theme
+          <h2 className="text-2xl font-bold mt-2">
+            Harvest of Divine Increase
           </h2>
 
-          <p className="mt-3 text-lg font-bold text-yellow-700">
-            Harvest of Divine Increase
-          </p>
-
-          <p className="mt-2 text-gray-700">
+          <p className="mt-2 text-orange-100">
             Isaiah 54:2-3
           </p>
-
-        </div>
-
-      </div>
-
-      {/* SHEPHERD MESSAGE */}
-      <div className="px-5 mt-5">
-
-        <div className="bg-white rounded-3xl shadow-xl p-5">
-
-          <div className="flex items-center gap-4">
-
-            <img
-              src="/assets/shepherd.jpg"
-              alt="Shepherd"
-              className="w-16 h-16 rounded-full object-cover"
-            />
-
-            <div>
-              <h3 className="font-bold text-green-900">
-                Message from the Shepherd
-              </h3>
-
-              <p className="text-sm text-gray-500">
-                Click to read full address
-              </p>
-            </div>
-
-          </div>
-
-          <p className="mt-4 text-gray-700">
-            We thank God for another opportunity to celebrate
-            His goodness. May this Harvest Thanksgiving bring
-            joy, peace and divine increase into every home.
-          </p>
-
         </div>
 
       </div>
 
       {/* QUICK ACCESS */}
-      <div className="p-5">
+      <div className="px-5 mt-8">
 
-        <h2 className="font-bold text-2xl text-green-900 mb-4">
+        <h2 className="text-2xl font-bold text-green-900 text-center mb-5">
           Quick Access
         </h2>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-3 gap-3">
 
-          <SectionCard
-            title="Service"
-            icon="📖"
-            description="Order of service"
-            link="/service"
-          />
+          {menuItems.map((item) => (
+            <Link
+              key={item.title}
+              to={item.link}
+            >
+              <div
+                className="
+                  bg-white
+                  rounded-3xl
+                  p-4
+                  text-center
+                  shadow-md
+                  hover:shadow-xl
+                  transition
+                  h-full
+                "
+              >
+                <div className="text-3xl mb-2">
+                  {item.icon}
+                </div>
 
-          <SectionCard
-            title="Hymns"
-            icon="🎵"
-            description="Harvest hymns"
-            link="/hymns"
-          />
-
-          <SectionCard
-            title="Prayers"
-            icon="🙏"
-            description="Psalms & prayers"
-            link="/prayers"
-          />
-
-          <SectionCard
-            title="Ministers"
-            icon="👥"
-            description="Officiating ministers"
-            link="/ministers"
-          />
-
-          <SectionCard
-            title="Welcome"
-            icon="📜"
-            description="Welcome address"
-            link="/welcome"
-          />
-
-          <SectionCard
-            title="Committee"
-            icon="🏆"
-            description="Harvest committee"
-            link="/committee"
-          />
-
-          <SectionCard
-            title="Gallery"
-            icon="📸"
-            description="Photo gallery"
-            link="/gallery"
-          />
-
-          <SectionCard
-            title="About"
-            icon="⛪"
-            description="About church"
-            link="/about"
-          />
+                <h3 className="font-semibold text-sm text-green-900">
+                  {item.title}
+                </h3>
+              </div>
+            </Link>
+          ))}
 
         </div>
 
       </div>
 
-      {/* HARVEST MEMORIES */}
-      <div className="px-5">
+      {/* SHEPHERD PREVIEW */}
+      <div className="px-5 mt-8">
 
-        <h2 className="font-bold text-2xl text-green-900 mb-4">
-          Harvest Memories
-        </h2>
+        <div className="bg-white rounded-3xl shadow-lg p-5">
 
-        <div className="grid grid-cols-2 gap-3">
+          <div className="flex gap-4 items-center">
+
+            <img
+              src="/assets/shepherd.jpg"
+              alt="Shepherd"
+              className="
+                w-20 h-20
+                rounded-full
+                object-cover
+                border-4 border-orange-200
+              "
+            />
+
+            <div>
+              <h3 className="font-bold text-green-900">
+                Welcome From The Shepherd
+              </h3>
+
+              <p className="text-gray-600 text-sm mt-1">
+                A special message for all worshippers and guests.
+              </p>
+
+              <Link
+                to="/welcome"
+                className="
+                  inline-flex
+                  items-center
+                  gap-2
+                  text-orange-600
+                  font-semibold
+                  mt-3
+                "
+              >
+                Read Full Message
+                <FaArrowRight />
+              </Link>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* SCRIPTURE BANNER */}
+      <div className="px-5 mt-8">
+
+        <div
+          className="
+            bg-green-900
+            text-white
+            rounded-3xl
+            p-6
+            text-center
+          "
+        >
+          <FaPray className="mx-auto text-4xl mb-4" />
+
+          <h3 className="font-bold text-xl">
+            Psalm 100:4
+          </h3>
+
+          <p className="mt-3 leading-7 text-green-100">
+            Enter into His gates with thanksgiving,
+            and into His courts with praise:
+            be thankful unto Him,
+            and bless His name.
+          </p>
+        </div>
+
+      </div>
+
+      {/* GALLERY PREVIEW */}
+      <div className="px-5 mt-8">
+
+        <div className="flex justify-between items-center mb-4">
+
+          <h2 className="text-2xl font-bold text-green-900">
+            Harvest Memories
+          </h2>
+
+          <Link
+            to="/gallery"
+            className="text-orange-600 font-semibold"
+          >
+            View All
+          </Link>
+
+        </div>
+
+        <div className="space-y-3">
 
           <img
             src="/assets/gallery1.jpg"
-            alt="Harvest"
-            className="rounded-2xl h-40 w-full object-cover"
+            alt=""
+            className="
+              w-full
+              h-56
+              object-cover
+              rounded-3xl
+            "
           />
 
-          <img
-            src="/assets/gallery2.jpg"
-            alt="Harvest"
-            className="rounded-2xl h-40 w-full object-cover"
-          />
+          <div className="grid grid-cols-2 gap-3">
 
-          <img
-            src="/assets/gallery3.jpg"
-            alt="Harvest"
-            className="rounded-2xl h-44 w-full object-cover col-span-2"
-          />
+            <img
+              src="/assets/gallery2.jpg"
+              alt=""
+              className="
+                h-36
+                w-full
+                object-cover
+                rounded-2xl
+              "
+            />
+
+            <img
+              src="/assets/gallery3.jpg"
+              alt=""
+              className="
+                h-36
+                w-full
+                object-cover
+                rounded-2xl
+              "
+            />
+
+          </div>
 
         </div>
 
@@ -252,46 +322,35 @@ export default function Home() {
       {/* FOOTER */}
       <div className="px-5 mt-8">
 
-        <div className="bg-green-900 text-white rounded-3xl p-6 text-center">
-
-          <FaPray className="mx-auto text-4xl mb-3" />
+        <div
+          className="
+            bg-gradient-to-r
+            from-green-900
+            to-orange-600
+            text-white
+            rounded-3xl
+            p-6
+            text-center
+          "
+        >
+          <FaChurch className="mx-auto text-4xl mb-3" />
 
           <h3 className="font-bold text-xl">
             Giving Thanks Unto God
           </h3>
 
-          <p className="mt-3 text-green-100">
-            Psalm 100:4
+          <p className="mt-2 text-orange-100">
+            Annual Harvest Thanksgiving Celebration
           </p>
 
-          <p className="mt-2 text-sm text-green-100">
-            Enter into His gates with thanksgiving,
-            and into His courts with praise.
-          </p>
+          <div className="mt-4 h-1 w-20 bg-white mx-auto rounded-full"></div>
 
+          <p className="mt-4 text-sm">
+            Cherubim & Seraphim Movement Church
+          </p>
         </div>
 
       </div>
-
-      {/* FLOATING SERVICE BUTTON */}
-      <a
-        href="/service"
-        className="
-          fixed
-          bottom-24
-          right-5
-          bg-yellow-500
-          text-black
-          px-5
-          py-3
-          rounded-full
-          shadow-xl
-          font-bold
-          z-50
-        "
-      >
-        📖 Service
-      </a>
 
     </div>
   );
