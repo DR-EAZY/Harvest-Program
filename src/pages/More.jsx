@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import PageTransition from "../components/PageTransition";
-import { shareProgramme } from "../utils/shareProgram";
+import { shareProgramme } from "../utils/ShareProgram";
 import PageHeader from "../components/PageHeader";
 import {
   FaInfoCircle,
