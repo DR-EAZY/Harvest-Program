@@ -1,3 +1,6 @@
+import PageTransition from "../components/PageTransition";
+import PageHeader from "../components/PageHeader";
+
 import {
   FaBookOpen,
   FaMusic,
@@ -5,142 +8,279 @@ import {
   FaMicrophone,
   FaBible,
   FaGift,
+  FaChurch,
+  FaUsers,
+  FaBullhorn,
 } from "react-icons/fa";
 
+const serviceOrder = [
+  {
+    type: "minister",
+    title: "Worship Leader",
+    details: "Ilaro Branch\nAlternative Worship Leader – Ilepa Branch",
+    icon: <FaUsers />,
+  },
+  {
+    type: "minister",
+    title: "Church Minister",
+    details: "Abeokuta Branch 1",
+    icon: <FaChurch />,
+  },
+  {
+    type: "hymn",
+    title: "Processional Hymn",
+    details: 'K&S 169\n"Oluwa Awa Omo Re Tunde"',
+    icon: <FaMusic />,
+  },
+  {
+    type: "choir",
+    title: "Introit",
+    details: "Choir",
+    icon: <FaMicrophone />,
+  },
+  {
+    type: "worship",
+    title: "Call to Worship",
+    details: "Programme Moderator",
+    icon: <FaBookOpen />,
+  },
+  {
+    type: "hymn",
+    title: "Opening Hymn",
+    details: 'K&S 49\n"Olugbala Gbohun Mi"',
+    icon: <FaMusic />,
+  },
+  {
+    type: "prayer",
+    title: "Opening Psalms",
+    details:
+      "Psalm 51\nPsalm 99\nPsalm 24\n\n• Prayer for Repentance & Forgiveness\n• Sanctification of Hearts, Homes & Place of Worship\n• Descent of the Holy Spirit\n• The Lord's Prayer and Seal",
+    icon: <FaPrayingHands />,
+  },
+  {
+    type: "hymn",
+    title: "Thanksgiving Hymns",
+    details:
+      'K&S 118 - "Ewe Ti Oba Orun"\nK&S 173 - "Wa Eyin Olope Wa"\nK&S 95 - "E Je Ka Jumo Fope Folorun"',
+    icon: <FaMusic />,
+  },
+  {
+    type: "prayer",
+    title: "Thanksgiving Prayer",
+    details: "Adehun Chapel, Abeokuta",
+    icon: <FaPrayingHands />,
+  },
+  {
+    type: "choir",
+    title: "Praise & Worship",
+    details: "Choir",
+    icon: <FaMicrophone />,
+  },
+  {
+    type: "lesson",
+    title: "First Lesson",
+    details: "Psalm 8:1–6\nReader: Osuke Branch",
+    icon: <FaBible />,
+  },
+  {
+    type: "hymn",
+    title: "Hymn",
+    details: 'K&S 404\n"Iwe Kan Wa Ti Kika Re"',
+    icon: <FaMusic />,
+  },
+  {
+    type: "lesson",
+    title: "Second Lesson",
+    details: "1 Peter 5:4–10\nReader: Soyoye Chapel, Abeokuta",
+    icon: <FaBible />,
+  },
+  {
+    type: "church",
+    title: "Gloria",
+    details: "",
+    icon: <FaChurch />,
+  },
+  {
+    type: "church",
+    title: "The Apostles' Creed",
+    details: "",
+    icon: <FaChurch />,
+  },
+  {
+    type: "prayer",
+    title: "Three People's Prayer",
+    details:
+      "Power of the Holy Spirit — Ona Egbon Chapel\n\nProtection, Mercy, Blessing & Provision — Apomu Chapel\n\nSteadfastness, Peace in C&S & Nigeria — Ibogun Branch",
+    icon: <FaPrayingHands />,
+  },
+  {
+    type: "announcement",
+    title: "Recognition & Announcements",
+    details:
+      "Recognition of Invited Guests\nProgramme Moderator & Assistant\n\n• Vows\n• Testimonies\n• Other Acknowledgements\n\nAnnouncements\n• Youth Fellowship\n• Circuit Youth\n• District Youth",
+    icon: <FaBullhorn />,
+  },
+  {
+    type: "offering",
+    title: "Renewal of Covenants",
+    details:
+      "• Money\n• Children\n• Peace\n• Kingdom of God",
+    icon: <FaGift />,
+  },
+  {
+    type: "choir",
+    title: "Special Anthem",
+    details: "YFM Choir",
+    icon: <FaMicrophone />,
+  },
+  {
+    type: "sermon",
+    title: "Sermon",
+    details: "Special Apostle Pastor (Dr.) I. A. Famodimu",
+    icon: <FaBible />,
+  },
+  {
+    type: "offering",
+    title: "Harvest Thanksgiving",
+    details: "Programme Moderator",
+    icon: <FaGift />,
+  },
+  {
+    type: "hymn",
+    title: "Closing Hymn",
+    details: 'K&S 831\n"Aye Si Mbe! Ile Odagunta"',
+    icon: <FaMusic />,
+  },
+  {
+    type: "hymn",
+    title: "Vesper Hymn",
+    details: 'K&S 804\n"Jo Ma Je Ki Fitila Ijo Yi Ku"',
+    icon: <FaMusic />,
+  },
+  {
+    type: "hymn",
+    title: "Recessional Hymn",
+    details: 'K&S 808\n"Eyin Araye Gbo"',
+    icon: <FaMusic />,
+  },
+  {
+    type: "hymn",
+    title: "Prayer Hour Hymn",
+    details: 'K&S 415\n"Wakati Adura Didun!"',
+    icon: <FaMusic />,
+  },
+  {
+    type: "church",
+    title: "Grace",
+    details: "M/S/AP. (Dr.) J. K. Coker",
+    icon: <FaChurch />,
+  },
+];
+
 export default function Service() {
-  const serviceOrder = [
-    {
-      title: "Processional Hymn",
-      icon: <FaMusic />,
-      time: "09:00 AM",
-    },
-    {
-      title: "Opening Prayer",
-      icon: <FaPrayingHands />,
-      time: "09:05 AM",
-    },
-    {
-      title: "Psalm 51",
-      icon: <FaBookOpen />,
-      time: "09:10 AM",
-    },
-    {
-      title: "Praise & Worship",
-      icon: <FaMusic />,
-      time: "09:15 AM",
-    },
-    {
-      title: "Psalm 24",
-      icon: <FaBookOpen />,
-      time: "09:30 AM",
-    },
-    {
-      title: "Choir Ministration",
-      icon: <FaMicrophone />,
-      time: "09:40 AM",
-    },
-    {
-      title: "Bible Reading",
-      icon: <FaBible />,
-      time: "10:00 AM",
-    },
-    {
-      title: "Sermon",
-      icon: <FaBible />,
-      time: "10:15 AM",
-    },
-    {
-      title: "Harvest Thanksgiving",
-      icon: <FaGift />,
-      time: "11:00 AM",
-    },
-    {
-      title: "Special Offering",
-      icon: <FaGift />,
-      time: "11:30 AM",
-    },
-    {
-      title: "Closing Hymn",
-      icon: <FaMusic />,
-      time: "11:45 AM",
-    },
-    {
-      title: "Benediction",
-      icon: <FaPrayingHands />,
-      time: "12:00 PM",
-    },
-  ];
-
   return (
-    <div className="min-h-screen bg-slate-100 pb-24">
+    <PageTransition>
+      <div className="min-h-screen bg-slate-100 pb-24">
 
-      {/* Header */}
-      <div className="bg-green-900 text-white p-6 rounded-b-3xl shadow-lg">
-        <h1 className="text-3xl font-bold">
-          📖 Order of Service
-        </h1>
+<PageHeader
+  title="Order of Service"
+  subtitle="Theme: Harvest Of Triple Opportunity"
+  icon="📖"
+/>
 
-        <p className="mt-2 text-green-100">
-          Harvest Thanksgiving Programme
-        </p>
-      </div>
-
-      {/* Service Items */}
-      <div className="p-5">
-
-        <div className="space-y-4">
+        <div className="px-5 py-8">
 
           {serviceOrder.map((item, index) => (
+
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-sm p-4 border-l-4 border-yellow-500"
+              className="relative flex gap-4 pb-8"
             >
-              <div className="flex items-center justify-between">
 
-                <div className="flex items-center gap-3">
+              {/* Timeline */}
 
-                  <div className="w-12 h-12 rounded-full bg-green-100 text-green-800 flex items-center justify-center text-xl">
-                    {item.icon}
-                  </div>
+              <div className="flex flex-col items-center">
 
-                  <div>
-                    <h2 className="font-bold text-green-900">
-                      {index + 1}. {item.title}
-                    </h2>
+<div
+  className={`
+    w-12
+    h-12
+    rounded-full
+    flex
+    items-center
+    justify-center
+    text-white
+    shadow-lg
 
-                    <p className="text-sm text-gray-500">
-                      {item.time}
-                    </p>
-                  </div>
+    ${
+      item.type === "hymn"
+        ? "bg-orange-500"
+      : item.type === "prayer"
+        ? "bg-blue-600"
+      : item.type === "lesson"
+        ? "bg-purple-600"
+      : item.type === "announcement"
+        ? "bg-red-500"
+      : item.type === "minister"
+        ? "bg-green-700"
+      : item.type === "sermon"
+        ? "bg-yellow-600"
+      : item.type === "offering"
+        ? "bg-pink-600"
+      : item.type === "choir"
+        ? "bg-indigo-600"
+      : "bg-green-900"
+    }
+  `}
+>
+  {item.icon}
+</div>
 
+                {index !== serviceOrder.length - 1 && (
+                  <div className="w-1 flex-1 bg-green-200 mt-2"></div>
+                )}
+
+              </div>
+
+              {/* Content */}
+
+              <div className="flex-1">
+
+                <div className="bg-white rounded-3xl p-5 shadow-md">
+
+                  <h2 className="text-xl font-bold text-green-900">
+  {index + 1}. {item.title}
+</h2>
+
+{item.details && (
+  <p className="text-gray-600 mt-3 leading-7 whitespace-pre-line">
+    {item.details}
+  </p>
+)}
                 </div>
 
               </div>
+
             </div>
+
           ))}
 
         </div>
 
-      </div>
+<div className="px-5 pb-8">
+  <div className="rounded-3xl bg-gradient-to-r from-green-800 to-orange-500 text-white p-6 shadow-lg">
+    <h2 className="text-xl font-bold">
+      AYO NI O
+    </h2>
 
-      {/* Important Notice */}
-      <div className="px-5">
-
-        <div className="bg-yellow-50 border border-yellow-300 rounded-2xl p-4">
-
-          <h3 className="font-bold text-yellow-700">
-            Important Notice
-          </h3>
-
-          <p className="mt-2 text-sm text-gray-700">
-            Kindly follow the order of service and participate
-            actively throughout the programme.
-          </p>
-
-        </div>
+    <p className="mt-3 leading-7 text-green-100">
+      Kindly follow the Order of Service prayerfully and participate actively
+      throughout the Harvest Thanksgiving Programme.
+    </p>
+  </div>
+</div>
 
       </div>
-
-    </div>
+    </PageTransition>
   );
 }

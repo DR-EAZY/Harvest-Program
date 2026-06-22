@@ -3,7 +3,9 @@ import {
   FaChurch,
   FaPray,
   FaArrowRight,
+  FaStar,
 } from "react-icons/fa";
+import PageTransition from "../components/PageTransition";
 
 export default function Home() {
   const menuItems = [
@@ -19,7 +21,9 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 pb-24">
+    <PageTransition>
+
+      <div className="min-h-screen bg-slate-50 pb-24">
 
       {/* HERO */}
       <section
@@ -138,6 +142,82 @@ export default function Home() {
         </div>
 
       </div>
+
+      {/* FELICITATIONS FEATURE */}
+<div className="px-5 mt-8">
+
+  <Link to="/felicitations">
+
+    <div
+      className="
+        relative
+        overflow-hidden
+        bg-gradient-to-r
+        from-yellow-500
+        via-orange-500
+        to-green-700
+        rounded-3xl
+        p-6
+        text-white
+        shadow-2xl
+        hover:scale-[1.02]
+        transition-all
+        duration-300
+      "
+    >
+
+      <div className="absolute top-4 right-4 opacity-20">
+        <FaStar className="text-7xl" />
+      </div>
+
+      <div className="absolute bottom-2 left-2 opacity-10">
+        <FaStar className="text-5xl" />
+      </div>
+
+      <div className="flex items-center gap-2 mb-3">
+        <FaStar />
+        <FaStar />
+        <FaStar />
+      </div>
+
+      <p className="uppercase tracking-widest text-sm">
+        Featured Section
+      </p>
+
+      <h2 className="text-3xl font-black mt-2">
+        Felicitations
+      </h2>
+
+      <p className="mt-3 text-white/90 leading-7">
+        Read congratulatory messages, prayers,
+        goodwill wishes and appreciation from
+        organizations, departments, families and
+        well-wishers celebrating this year's
+        Harvest Thanksgiving.
+      </p>
+
+      <div
+        className="
+          mt-5
+          inline-flex
+          items-center
+          gap-2
+          font-bold
+          bg-white/20
+          px-4
+          py-2
+          rounded-full
+        "
+      >
+        View Felicitations
+        <FaArrowRight />
+      </div>
+
+    </div>
+
+  </Link>
+
+</div>
 
       {/* QUICK ACCESS */}
       <div className="px-5 mt-8">
@@ -353,5 +433,8 @@ export default function Home() {
       </div>
 
     </div>
+
+    </PageTransition>
+    
   );
 }

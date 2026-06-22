@@ -4,39 +4,39 @@ import {
   FaBookOpen,
   FaMusic,
   FaPray,
-  FaUsers,
+  FaBars,
 } from "react-icons/fa";
 
 export default function BottomNav() {
   const location = useLocation();
 
   const navItems = [
-    {
-      name: "Home",
-      path: "/",
-      icon: <FaHome />,
-    },
-    {
-      name: "Service",
-      path: "/service",
-      icon: <FaBookOpen />,
-    },
-    {
-      name: "Hymns",
-      path: "/hymns",
-      icon: <FaMusic />,
-    },
-    {
-      name: "Prayers",
-      path: "/prayers",
-      icon: <FaPray />,
-    },
-    {
-      name: "Ministers",
-      path: "/ministers",
-      icon: <FaUsers />,
-    },
-  ];
+  {
+    name: "Home",
+    path: "/",
+    icon: <FaHome />,
+  },
+  {
+    name: "Service",
+    path: "/service",
+    icon: <FaBookOpen />,
+  },
+  {
+    name: "Hymns",
+    path: "/hymns",
+    icon: <FaMusic />,
+  },
+  {
+    name: "Prayers",
+    path: "/prayers",
+    icon: <FaPray />,
+  },
+  {
+    name: "More",
+    path: "/more",
+    icon: <FaBars />,
+  },
+];
 
   return (
     <div

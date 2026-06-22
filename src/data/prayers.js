@@ -1,39 +1,73 @@
 export const prayers = [
   {
     id: 1,
-    title: "Psalm 24",
-    category: "Responsive Reading",
+    title: "Psalm 51",
+    category: "Opening Psalm",
     content: `
-Leader:
-The earth is the Lord's, and the fulness thereof;
-the world, and they that dwell therein.
+Psalm 51
 
-Congregation:
-For He hath founded it upon the seas,
-and established it upon the floods.
-
-Leader:
-Who shall ascend into the hill of the Lord?
-
-Congregation:
-Or who shall stand in His holy place?
+(Full text will be added.)
 `,
   },
 
   {
     id: 2,
-    title: "Psalm 51",
-    category: "Opening Reading",
+    title: "Psalm 99",
+    category: "Opening Psalm",
     content: `
-Have mercy upon me, O God,
-according to thy lovingkindness:
-according unto the multitude
-of thy tender mercies blot out my transgressions.
+Psalm 99
+
+(Full text will be added.)
 `,
   },
 
   {
     id: 3,
+    title: "Psalm 24",
+    category: "Opening Psalm",
+    content: `
+Psalm 24
+
+(Full text will be added.)
+`,
+  },
+
+  {
+    id: 4,
+    title: "Prayer for Repentance & Forgiveness",
+    category: "Prayer",
+    content: `
+Prayer for repentance and forgiveness before God.
+
+(Prayer text will be added.)
+`,
+  },
+
+  {
+    id: 5,
+    title: "Sanctification Prayer",
+    category: "Prayer",
+    content: `
+Prayer for the sanctification of our hearts,
+homes and place of worship.
+
+(Prayer text will be added.)
+`,
+  },
+
+  {
+    id: 6,
+    title: "Descent of the Holy Spirit",
+    category: "Prayer",
+    content: `
+Prayer for the descent of the Holy Spirit.
+
+(Prayer text will be added.)
+`,
+  },
+
+  {
+    id: 7,
     title: "The Lord's Prayer",
     category: "Prayer",
     content: `
@@ -42,22 +76,66 @@ Hallowed be thy name.
 
 Thy kingdom come.
 
-Thy will be done in earth,
+Thy will be done on earth,
 as it is in heaven.
 
 Give us this day our daily bread.
 
 And forgive us our trespasses,
-as we forgive them that trespass against us.
+as we forgive those who trespass against us.
 
 And lead us not into temptation,
-but deliver us from evil:
+but deliver us from evil.
 
 For thine is the kingdom,
 the power and the glory,
 for ever and ever.
 
 Amen.
+`,
+  },
+
+  {
+    id: 8,
+    title: "Thanksgiving Prayer",
+    category: "Prayer",
+    content: `
+Officiated by:
+
+Adehun Chapel, Abeokuta.
+`,
+  },
+
+  {
+    id: 9,
+    title: "Three People's Prayer",
+    category: "Special Prayer",
+    content: `
+• Power of the Holy Spirit
+  - Ona Egbon Chapel
+
+• Protection, Mercy, Blessing & Provision
+  - Apomu Chapel
+
+• Steadfastness, Peace in C&S and Nigeria
+  - Ibogun Branch
+`,
+  },
+
+  {
+    id: 10,
+    title: "Renewal of Covenants",
+    category: "Special Prayer",
+    content: `
+Prayer for:
+
+• Money
+
+• Children
+
+• Peace
+
+• Kingdom of God
 `,
   },
 ];

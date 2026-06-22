@@ -1,74 +1,133 @@
-import { FaPrayingHands } from "react-icons/fa";
-import { prayers } from "../data/prayers";
+import { useState } from "react";
+import {
+  FaPrayingHands,
+  FaChevronDown,
+  FaChevronUp,
+  FaBook,
+} from "react-icons/fa";
+import PageTransition from "../components/PageTransition";
+import PageHeader from "../components/PageHeader";
 
 export default function Prayers() {
+  const [open, setOpen] = useState(0);
+
+  const prayers = [
+    {
+      title: "Opening Prayer",
+      icon: <FaPrayingHands />,
+      content: `Heavenly Father, we thank You for gathering us together for this Harvest Thanksgiving celebration. Accept our worship and let Your presence abide with us throughout this service. In Jesus' Name. Amen.`,
+    },
+    {
+      title: "The Lord's Prayer",
+      icon: <FaBook />,
+      content: `Our Father, who art in heaven,
+Hallowed be Thy Name.
+Thy Kingdom come.
+Thy will be done on earth as it is in heaven.
+Give us this day our daily bread.
+And forgive us our trespasses,
+As we forgive those who trespass against us.
+Lead us not into temptation,
+But deliver us from evil.
+For Thine is the Kingdom,
+The Power and the Glory,
+Forever and ever.
+Amen.`,
+    },
+    {
+      title: "Psalm 24",
+      icon: <FaBook />,
+      content: `The earth is the Lord's, and the fulness thereof;
+the world, and they that dwell therein.
+For he hath founded it upon the seas,
+and established it upon the floods...`,
+    },
+    {
+      title: "Psalm 51",
+      icon: <FaBook />,
+      content: `Have mercy upon me, O God,
+according to thy lovingkindness:
+according unto the multitude of thy tender mercies
+blot out my transgressions...`,
+    },
+    {
+      title: "Psalm 84",
+      icon: <FaBook />,
+      content: `How amiable are thy tabernacles,
+O Lord of hosts!
+My soul longeth,
+yea, even fainteth for the courts of the Lord...`,
+    },
+    {
+      title: "Closing Prayer",
+      icon: <FaPrayingHands />,
+      content: `May the grace of our Lord Jesus Christ, the love of God, and the sweet fellowship of the Holy Spirit remain with us now and forevermore. Amen.`,
+    },
+  ];
+
   return (
-    <div className="min-h-screen bg-slate-100 pb-24">
+    <PageTransition>
+      <div className="min-h-screen bg-slate-100 pb-24">
 
-      {/* Header */}
-      <div className="bg-green-900 text-white p-6 rounded-b-3xl shadow-lg">
+        <PageHeader
+          title="Psalms & Prayers"
+          subtitle="Follow Along During the Service"
+          icon="🙏"
+        />
 
-        <div className="flex items-center gap-3">
-          <FaPrayingHands className="text-2xl" />
+        <div className="p-5 space-y-4">
 
-          <h1 className="text-3xl font-bold">
-            Psalms & Prayers
-          </h1>
-        </div>
-
-        <p className="mt-2 text-green-100">
-          Responsive readings and prayers for the service.
-        </p>
-
-      </div>
-
-      {/* Prayer List */}
-      <div className="p-5">
-
-        <div className="space-y-4">
-
-          {prayers.map((prayer) => (
-            <details
-              key={prayer.id}
+          {prayers.map((item, index) => (
+            <div
+              key={index}
               className="bg-white rounded-3xl shadow-md overflow-hidden"
             >
-              <summary className="cursor-pointer p-5 list-none">
+
+              <button
+                onClick={() =>
+                  setOpen(open === index ? -1 : index)
+                }
+                className="w-full flex items-center justify-between p-5"
+              >
 
                 <div className="flex items-center gap-4">
 
-                  <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
-                    🙏
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-green-700 to-orange-500 text-white flex items-center justify-center shadow-lg">
+                    {item.icon}
                   </div>
 
-                  <div>
-                    <h2 className="font-bold text-lg text-green-900">
-                      {prayer.title}
-                    </h2>
-
-                    <p className="text-sm text-gray-500">
-                      {prayer.category}
-                    </p>
-                  </div>
+                  <h2 className="font-bold text-green-900 text-lg text-left">
+                    {item.title}
+                  </h2>
 
                 </div>
 
-              </summary>
+                {open === index ? (
+                  <FaChevronUp />
+                ) : (
+                  <FaChevronDown />
+                )}
 
-              <div className="border-t px-5 py-4">
+              </button>
 
-                <div className="whitespace-pre-line leading-8 text-gray-800">
-                  {prayer.content}
+              {open === index && (
+                <div className="px-5 pb-5">
+
+                  <div className="bg-orange-50 border-l-4 border-orange-500 rounded-2xl p-5 whitespace-pre-line leading-9 text-gray-700">
+
+                    {item.content}
+
+                  </div>
+
                 </div>
+              )}
 
-              </div>
-
-            </details>
+            </div>
           ))}
 
         </div>
 
       </div>
-
-    </div>
+    </PageTransition>
   );
 }
