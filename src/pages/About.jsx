@@ -72,9 +72,7 @@ export default function About() {
             </div>
 
             <p className="leading-8 text-gray-700">
-              To proclaim Christ through worship, evangelism,
-              discipleship and practical Christian living while
-              bringing hope to humanity.
+              Impacting life through sound teachings, life transforming  worship and relevant economic skills.
             </p>
 
           </div>
@@ -94,9 +92,7 @@ export default function About() {
             </div>
 
             <p className="leading-8 text-gray-700">
-              To raise believers who faithfully serve God,
-              positively influence society and spread the Gospel
-              across the world.
+              To develop men and women of faith who are spiritually and economically relevant.
             </p>
 
           </div>

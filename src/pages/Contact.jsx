@@ -46,9 +46,8 @@ export default function Contact() {
                 </h3>
 
                 <p className="text-gray-600 mt-1">
-                  Cherubim & Seraphim Movement Church,
-                  Sureulere District,
-                  Lagos State.
+Bosun Ilepa Powerline, Ifo Ogun Nigeria 
+
                 </p>
               </div>
 
@@ -71,7 +70,7 @@ export default function Contact() {
                 </h3>
 
                 <p className="text-gray-600 mt-1">
-                  +234 XXX XXX XXXX
+                  09034447935, 07063155403.
                 </p>
               </div>
 
@@ -117,11 +116,15 @@ export default function Contact() {
                 </h3>
 
                 <p className="text-gray-600 mt-1">
-                  Sunday Service — 9:00 AM
+                  SUNDAY: THANKSGIVING SERVICE 8:30am - 12noon
                 </p>
 
                 <p className="text-gray-600">
-                  Bible Study — Wednesday
+                  THURSDAY: FAITH CLINIC 9am - 12noon
+                </p>
+
+                <p className="text-gray-600">
+                  FRIDAY: Bible study 5pm - 6:30pm
                 </p>
               </div>
 

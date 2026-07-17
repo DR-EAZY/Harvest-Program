@@ -2,33 +2,38 @@
 
 const committee = [
   {
-    name: "Most Snr. Apostle John Doe",
-    position: "Patron",
+    name: "Sis. Ige Fadina Oluwayemisi",
+    position: "Chairman",
     image: "/assets/gallery1.jpg",
   },
   {
-    name: "Snr. Apostle Michael Johnson",
-    position: "Chairman",
+    name: "Bro. Damilare Ogundele",
+    position: "Vice Chairman",
     image: "/assets/gallery2.jpg",
   },
   {
-    name: "Sis. Esther Williams",
+    name: "Sis. Itunu Joseph",
     position: "Secretary",
     image: "/assets/gallery3.jpg",
   },
   {
-    name: "Bro. David James",
-    position: "Treasurer",
+    name: "Sis. Tope Odunjo",
+    position: "Fin Sec.",
     image: "/assets/gallery4.jpg",
   },
   {
-    name: "Sis. Grace Ade",
-    position: "Member",
+    name: "Bro. Ajala Joseph",
+    position: "PRO 1",
     image: "/assets/gallery5.jpg",
   },
   {
-    name: "Bro. Samuel Peter",
-    position: "Member",
+    name: "Bro. Olanrewaju Ademola",
+    position: "PRO 2",
+    image: "/assets/gallery6.jpg",
+  },
+    {
+    name: "Sis. Shola Oyeneye",
+    position: "Event Planner",
     image: "/assets/gallery6.jpg",
   },
 ];

@@ -32,7 +32,7 @@ export default function Welcome() {
             <div className="flex justify-center -mt-20">
 
               <img
-                src="/assets/shepherd.jpg"
+                src="/assets/shepherd.jpeg"
                 alt="Shepherd"
                 className="w-40 h-40 rounded-full border-4 border-white object-cover shadow-2xl"
               />
@@ -46,7 +46,7 @@ export default function Welcome() {
               </h2>
 
               <p className="text-slate-500 text-lg">
-                Servant Youth Shepherd
+                Youth Shepherd
               </p>
 
               <div className="w-24 h-1 rounded-full bg-orange-500 mx-auto mt-5"></div>
